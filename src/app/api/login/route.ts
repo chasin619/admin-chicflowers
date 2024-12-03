@@ -12,6 +12,8 @@ interface LoginRequestBody {
 
 const jwt_secret = process.env.NEXT_PUBLIC_JWT_SECRET || "";
 
+export const maxDuration = 300;
+
 export async function POST(req: Request) {
   try {
     const body: LoginRequestBody = await req.json();

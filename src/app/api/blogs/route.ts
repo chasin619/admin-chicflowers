@@ -12,6 +12,8 @@ interface BlogDocument {
   updatedAt: string;
 }
 
+export const maxDuration = 300;
+
 export async function GET(): Promise<NextResponse> {
   try {
     await dbConnect();

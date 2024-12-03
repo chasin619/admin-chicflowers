@@ -8,6 +8,8 @@ interface PortfolioRequestBody {
   images: any[];
 }
 
+export const maxDuration = 300;
+
 export async function POST(req: Request) {
   try {
     const body: PortfolioRequestBody = await req.json();

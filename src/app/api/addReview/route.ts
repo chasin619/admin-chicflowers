@@ -7,6 +7,8 @@ interface ReviewRequestBody {
   image: string;
 }
 
+export const maxDuration = 300;
+
 export async function POST(req: Request) {
   try {
     const body: ReviewRequestBody = await req.json();

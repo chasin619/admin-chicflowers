@@ -13,6 +13,8 @@ interface UserRequestBody {
 
 const jwt_secret = process.env.NEXT_PUBLIC_JWT_SECRET || "";
 
+export const maxDuration = 300;
+
 export async function POST(req: Request) {
   try {
     const body: UserRequestBody = await req.json();
@@ -44,7 +46,7 @@ export async function POST(req: Request) {
     const accessToken = jwt.sign(data, jwt_secret);
 
     return NextResponse.json(
-      { message: "User SignUp successfully", user, accessToken},
+      { message: "User SignUp successfully", user, accessToken },
       { status: 200 },
     );
   } catch (error: any) {

@@ -8,6 +8,8 @@ interface ReviewDocument {
   image: string;
 }
 
+export const maxDuration = 300;
+
 export async function GET(): Promise<NextResponse> {
   try {
     await dbConnect();
